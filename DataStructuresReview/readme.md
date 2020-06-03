@@ -4,7 +4,8 @@ All Rights Reserved (why are you using this anyway?)
 
 #Fibbonacci Hashing
 In college, the hashing algorithm was given to us. So, I wanted to take a stab at an implementation of my own. 
-By using the irrational number phi, we've been able to create a hash that fairly evenly spaces our Hashables.
+By using the irrational number phi, we've been able to create a hash that fairly evenly spaces our Hashables. 
+I'm not done yet, but I will include some benchmarks on this down the road. 
 
 #Hashable
 We created a virtual class, Hashable, that we'll need to extend to make this work. Hashable requires that two functions
