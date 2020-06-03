@@ -96,4 +96,6 @@ int main()
     ht->insert(test4);
 
     cout << *ht;
+
+    cout << (Employee) * (ht->lookup(1234)) << " - lookup success";
 }

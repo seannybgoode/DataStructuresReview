@@ -44,7 +44,7 @@ bool HashTable<Hashable>::remove(int key)
 template<class Hashable>
 Hashable* HashTable<Hashable>::lookup(int key)
 {
-	int hash = hash(key);
+	unsigned int hash = this->hash(key);
 	Hashable* item = table[hash]->find(key);
 	return item;
 }

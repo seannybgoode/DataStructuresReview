@@ -15,6 +15,10 @@ template <class Hashable> class HashTable
 		void insert(Hashable* item);
 		bool remove(int key);
 		Hashable* lookup(int key);
+
+		//compiler doesn't play nice with the namespace for overloaded template friend functions
+		//so we define it in the header file and it doens't complain 
+		//great documentation on the matter here - https://isocpp.org/wiki/faq/templates#template-friends
 		friend std::ostream& operator<< (std::ostream& outputStream, const HashTable<Hashable>& rhs)
 		{
 			for (int i = 0; i < rhs.size; i++)
