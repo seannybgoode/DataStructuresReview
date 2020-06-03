@@ -21,12 +21,15 @@ This way some user could use our 'library' with their own types, by way of polym
 
 #Summary
 This is intended to be a demonstration of object oriented programming, some half-decent software engineering technique,
-and a review of data structures in C++. 
+and a review of data structures in C++. I've been working on private codebases the last few years, so most of my work is
+hidden from the public, wanted to put something out there that demonstrates I've got some ability to code competently.
+
+I'll be adding more as I go over the next few weeks.
 
 We've used Visual C++, for the sake of getting up and coding a little faster, and to play with a
 different flavour of C++. 
 
 You can find me on stack overflow asking silly questions, then (usually) answering them on my own for the sake of the 
-next person.
+next person.  https://stackoverflow.com/users/1055516/scuba-steve
 
 If you try to pass this off as homework, I will rat you out.
