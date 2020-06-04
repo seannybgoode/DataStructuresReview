@@ -50,10 +50,10 @@ void HashTable<Hashable>::insert(Hashable* item)
 }
 
 template<class Hashable>
-bool HashTable<Hashable>::remove(int key)
+bool HashTable<Hashable>::remove(Hashable* item)
 {
-	int hash = hash(key);
-	if (table[hash]->remove(key))
+	unsigned int hash = hash(item->hash());
+	if (table[hash]->remove(item))
 	{
 		count--;
 		return true;
@@ -62,10 +62,10 @@ bool HashTable<Hashable>::remove(int key)
 }
 
 template<class Hashable>
-Hashable* HashTable<Hashable>::lookup(int key)
+Hashable* HashTable<Hashable>::lookup(Hashable* item)
 {
-	unsigned int hash = this->hash(key);
-	Hashable* item = table[hash]->find(key);
+	unsigned int hash = this->hash(item->hash());
+	item = table[hash]->find(item);
 	return item;
 }
 

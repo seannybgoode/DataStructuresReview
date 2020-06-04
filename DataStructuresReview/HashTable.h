@@ -13,8 +13,8 @@ template <class Hashable> class HashTable
 		~HashTable();
 
 		void insert(Hashable* item); //returns a key for the lookup later
-		bool remove(int key);
-		Hashable* lookup(int key);
+		bool remove(Hashable* item);
+		Hashable* lookup(Hashable* item);
 
 		//compiler doesn't play nice with the namespace for overloaded template friend functions
 		//so we define it in the header file and it doens't complain 
