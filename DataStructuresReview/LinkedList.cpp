@@ -64,6 +64,8 @@ T* LinkedList<T>::find(int key)
 template<class T>
 T* LinkedList<T>::first()
 {
+	if (this == nullptr)
+		return nullptr;
 	if (head == nullptr)
 		return nullptr;
 	else

@@ -12,7 +12,7 @@ template <class Hashable> class HashTable
 		HashTable();
 		~HashTable();
 
-		void insert(Hashable* item);
+		void insert(Hashable* item); //returns a key for the lookup later
 		bool remove(int key);
 		Hashable* lookup(int key);
 
@@ -38,8 +38,11 @@ template <class Hashable> class HashTable
 		static const unsigned __int64 FIBBONACCI_HASH_MULTIPLIER = 11400714819323198485llu; //credit to Malte Skarupke - www.probablydance.com
 		static const int DEFAULT_TABLE_SIZE = 16;
 		int size = DEFAULT_TABLE_SIZE;
+		int count = 0;
 		LinkedList<Hashable>** table;
 
+		//we use safe insert to prevent rehasing while the table is already rehashing
+		void safeInsert(Hashable* item, bool isSafeInsert); 
 		unsigned int hash(int key);
 		void rehash();
 		void initArray(LinkedList<Hashable>** ary);

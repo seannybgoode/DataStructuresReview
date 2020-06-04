@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <cstdlib>
+#include <fstream>
 #include "Employee.h"
 #include "LinkedList.h"
 #include "LinkedList.cpp"
@@ -10,6 +11,29 @@
 #include "HashTable.cpp"
 
 using namespace std;
+
+void readFile(string fileName, HashTable<Employee>* ht)
+{
+    string text = "";
+    std::ifstream fileInput;
+    fileInput.open(fileName);
+    while (std::getline(fileInput, text))
+    {
+        string lastName, firstName;
+        int eeid;
+        unsigned int indexPlaceholder = text.find(',');
+        eeid = std::stoi(text.substr(0,indexPlaceholder));
+
+        text = text.substr(indexPlaceholder + 2, text.length());
+        indexPlaceholder = text.find(',');
+        lastName = text.substr(0, indexPlaceholder);
+
+        text = text.substr(indexPlaceholder + 2, text.length());
+
+        firstName = text; 
+        ht->insert(new Employee(firstName, lastName, eeid)); 
+    }
+}
 
 int main()
 {
@@ -90,12 +114,14 @@ int main()
     //delete list;
 
     HashTable<Employee>* ht = new HashTable<Employee>();
-    ht->insert(test1);
-    ht->insert(test2);
-    ht->insert(test3);
-    ht->insert(test4);
+    readFile("employees.txt", ht);
 
     cout << *ht;
 
-    cout << (Employee) * (ht->lookup(1234)) << " - lookup success";
+    //cout << (Employee) * (ht->lookup(1234)) << " - lookup success";
+    
+
+    //delete *ht;
+
 }
+
