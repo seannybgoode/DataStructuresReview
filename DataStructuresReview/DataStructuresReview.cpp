@@ -9,6 +9,8 @@
 #include "LinkedList.cpp"
 #include "HashTable.h"
 #include "HashTable.cpp"
+#include "Stack.h"
+#include "Stack.cpp"
 
 using namespace std;
 
@@ -121,7 +123,22 @@ int main()
     //cout << (Employee) * (ht->lookup(1234)) << " - lookup success";
     
 
-    //delete *ht;
+    delete ht;
+
+    Stack<Employee>* eeStack = new Stack<Employee>();
+    eeStack->push(test1);
+    eeStack->push(test2);
+    eeStack->push(test3);
+    eeStack->push(test4);
+
+    Employee* ee = eeStack->peek();
+    cout << ee->getFirstName() << " " << ee->getLastName();
+
+    ee = eeStack->pop();
+    cout << ee->getFirstName() << " " << ee->getLastName();
+
+    delete eeStack;
+    
 
 }
 

@@ -10,7 +10,7 @@ HashTable<Hashable>::HashTable()
 template<class Hashable>
 HashTable<Hashable>::~HashTable()
 {
-	for (int i = 0; i < table->length; i++)
+	for (int i = 0; i < (this->size); i++)
 	{
 		if(table[i] != nullptr)
 			delete table[i];
@@ -104,7 +104,7 @@ void HashTable<Hashable>::rehash()
 	this->table = new LinkedList<Hashable>* [this->size]; //apply the size to the table
 	initArray(table);
 	Hashable* item = nullptr;
-	for (int i = 0; i < size/2; i++)
+	for (int i = 0; i < size/2; i++)//looks like it might be close to n^2, but it's O(n)
 	{
 		while ((item = oldTable[i]->first()) != nullptr) //throwing exception on oldTable
 		{
